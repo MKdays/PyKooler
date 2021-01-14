@@ -1,0 +1,1543 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Main</class>
+ <widget class="QMainWindow" name="Main">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1031</width>
+    <height>839</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="contextMenuPolicy">
+   <enum>Qt::PreventContextMenu</enum>
+  </property>
+  <property name="acceptDrops">
+   <bool>false</bool>
+  </property>
+  <property name="windowTitle">
+   <string/>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/*** 메인폰트 ***/
+QWidget {font: 13px &quot;Malgun Gothic&quot;; color: rgb(63, 63, 63);}
+
+/*** 버튼 ***/
+QPushButton {background-color: transparent;border-radius: 0px;border-style: solid;border-width: 1px;border-color: rgb(200, 200, 200);height: 24px;width: 80px;}
+QPushButton:hover {background-color: rgb(229, 241, 251);border-color: rgb(0, 120, 215);}
+QPushButton:pressed {background-color: rgb(205, 228, 247);border-color: rgb(0, 85, 155);}
+
+/*** 스핀박스 ***/
+QSpinBox{border-style: solid;border-width: 1px;border-color: rgb(200, 200, 200);}
+QSpinBox:hover {border-color: rgb(0, 120, 215);}
+QSpinBox::up-button {image: url(:/img/Icon/unit_up.png);width: 20;background-color: rgb(240, 240, 240);}
+QSpinBox::up-button:hover {background-color: rgb(229, 241, 251);}
+QSpinBox::up-button:pressed {background-color: rgb(205, 228, 247);}
+QSpinBox::down-button {image: url(:/img/Icon/unit_down.png);width: 20;background-color: rgb(240, 240, 240);}
+QSpinBox::down-button:hover {background-color: rgb(229, 241, 251);}
+QSpinBox::down-button:pressed {background-color: rgb(205, 228, 247);}
+
+/*** 스핀박스 ***/
+QDoubleSpinBox{border-style: solid;border-width: 1px;border-color: rgb(200, 200, 200);}
+QDoubleSpinBox:hover {border-color: rgb(0, 120, 215);}
+QDoubleSpinBox::up-button {image: url(:/img/Icon/unit_up.png);width: 20;background-color: rgb(240, 240, 240);}
+QDoubleSpinBox::up-button:hover {background-color: rgb(229, 241, 251);}
+QDoubleSpinBox::up-button:pressed {background-color: rgb(205, 228, 247);}
+QDoubleSpinBox::down-button {image: url(:/img/Icon/unit_down.png);width: 20;background-color: rgb(240, 240, 240);}
+QDoubleSpinBox::down-button:hover {background-color: rgb(229, 241, 251);}
+QDoubleSpinBox::down-button:pressed {background-color: rgb(205, 228, 247);}
+
+/*** 콤보박스 ***/
+QComboBox {background-color: transparent;border-radius: 0px;border-style: solid;border-width: 1px;border-color: rgb(200, 200, 200);}
+QComboBox:hover {background-color: rgb(229, 241, 251);border-color: rgb(0, 120, 215);}
+QComboBox:drop-down {image: url(:/img/Icon/unit_dbox.png);width: 20px;}
+
+/*** 프로그레스바 ***/
+QProgressBar{background-color: white; border-radius: 0px;border-style: solid;border-width: 1px;border-color: rgb(200, 200, 200);text-align: center;}
+QProgressBar::chunk{background-color: rgb(205, 228, 247);}
+
+/*** 라인 에디트 ***/
+QLineEdit {border-radius: 0px;border-style: solid;border-width: 1px;border-color: rgb(200, 200, 200);}
+QLineEdit:hover {border-color: rgb(0, 120, 215);}
+
+/*** 플레인 텍스트 에디트 ***/
+QPlainTextEdit {border-radius: 0px;border-style: solid;border-width: 1px;border-color: rgb(200, 200, 200);}
+QPlainTextEdit:hover {border-color: rgb(0, 120, 215);}
+
+/*** 그룹박스 ***/
+QGroupBox{font: 14px;color: rgb(63, 63, 63);border: 0px solid; border-color: rgb(200, 200, 200);}
+
+/***텍스트 에디트***/
+QTextEdit {border-radius: 0px;border-style: solid;border-width: 1px;border-color: rgb(200, 200, 200);}
+QTextEdit:hover {border-color: rgb(0, 120, 215);}
+
+/*** 그룹박스 ***/
+QScrollArea{font: 14px;color: rgb(63, 63, 63);border: 0px solid; border-color: rgb(200, 200, 200);}</string>
+  </property>
+  <property name="toolButtonStyle">
+   <enum>Qt::ToolButtonIconOnly</enum>
+  </property>
+  <property name="documentMode">
+   <bool>false</bool>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::Rounded</enum>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <widget class="QTabWidget" name="tab_main">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>50</y>
+      <width>510</width>
+      <height>690</height>
+     </rect>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QTabWidget::pane { /* 메인 내부 화면 */
+background: white;
+border: 0px solid;
+margin-right: 1px;
+margin-bottom: 1px;
+}
+
+/* 기본탭 */
+QTabBar::tab{
+width: 50;
+color: blue;font: 30px; 
+height: 30px;
+background: transparent;
+border: 0px solid;
+}</string>
+    </property>
+    <property name="tabPosition">
+     <enum>QTabWidget::South</enum>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>0</string>
+     </attribute>
+     <widget class="QScrollArea" name="scrollArea">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>510</width>
+        <height>660</height>
+       </rect>
+      </property>
+      <property name="sizeAdjustPolicy">
+       <enum>QAbstractScrollArea::AdjustIgnored</enum>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <widget class="QWidget" name="scroll_lay">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>493</width>
+         <height>1000</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="sizeConstraint">
+         <enum>QLayout::SetDefaultConstraint</enum>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QGroupBox" name="main_gr">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>1000</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QGroupBox{background-color: white; font: 14px;color: rgb(63, 63, 63);border: 0px solid; border-color: rgb(200, 200, 200);}
+
+QRadioButton::indicator:checked{image: url(:/img/Icon/unit_radio_checked.png);}
+QRadioButton::indicator:unchecked{image: url(:/img/Icon/unit_radio_unchecked.png);}
+QRadioButton:checked{background-color: transparent}
+QRadioButton:unchecked{color: rgb(127, 127, 127);}
+QRadioButton:hover {background-color: rgb(230, 230, 230);}</string>
+          </property>
+          <property name="title">
+           <string/>
+          </property>
+          <property name="flat">
+           <bool>true</bool>
+          </property>
+          <widget class="QTextEdit" name="option_edit">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>640</y>
+             <width>460</width>
+             <height>60</height>
+            </rect>
+           </property>
+           <property name="focusPolicy">
+            <enum>Qt::ClickFocus</enum>
+           </property>
+           <property name="acceptDrops">
+            <bool>false</bool>
+           </property>
+          </widget>
+          <widget class="QLabel" name="dmy_15">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>110</y>
+             <width>100</width>
+             <height>30</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Runtime-hook</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+          <widget class="QTableWidget" name="file_table">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>420</y>
+             <width>460</width>
+             <height>140</height>
+            </rect>
+           </property>
+           <property name="focusPolicy">
+            <enum>Qt::NoFocus</enum>
+           </property>
+           <property name="autoFillBackground">
+            <bool>false</bool>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">/*** 테이블 위젯 ***/
+
+
+/*상부 헤더*/
+QHeaderView::section {
+	background-color: rgb(240, 240, 240);
+	border-style: solid;
+	border-color: rgb(220, 220, 220);
+	border-right-width: 1px;
+	border-bottom: 1px solid rgb(220, 220, 220);
+}
+
+/*테이블 바디 외곽*/
+QTableWidget{
+	background-color:white;
+	border-style: solid;
+	border-width: 1px;
+	border-color: rgb(220, 220, 220);
+	padding-right: -1px /*QT 테이블의 우측 비대칭 보정*/
+}
+
+/*테이블 내 가이드라인 컬러*/
+QTableWidget {
+	gridline-color: rgb(220, 220, 220);
+}
+
+/*선택항목 컬러*/
+QTableWidget::item:selected{
+	background-color:rgb(205, 228, 247);
+}</string>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Sunken</enum>
+           </property>
+           <property name="horizontalScrollBarPolicy">
+            <enum>Qt::ScrollBarAsNeeded</enum>
+           </property>
+           <property name="sizeAdjustPolicy">
+            <enum>QAbstractScrollArea::AdjustToContents</enum>
+           </property>
+           <property name="autoScroll">
+            <bool>false</bool>
+           </property>
+           <property name="editTriggers">
+            <set>QAbstractItemView::NoEditTriggers</set>
+           </property>
+           <property name="alternatingRowColors">
+            <bool>false</bool>
+           </property>
+           <property name="selectionMode">
+            <enum>QAbstractItemView::ExtendedSelection</enum>
+           </property>
+           <property name="selectionBehavior">
+            <enum>QAbstractItemView::SelectRows</enum>
+           </property>
+           <property name="horizontalScrollMode">
+            <enum>QAbstractItemView::ScrollPerPixel</enum>
+           </property>
+           <property name="showGrid">
+            <bool>true</bool>
+           </property>
+           <property name="gridStyle">
+            <enum>Qt::SolidLine</enum>
+           </property>
+           <property name="sortingEnabled">
+            <bool>false</bool>
+           </property>
+           <property name="cornerButtonEnabled">
+            <bool>true</bool>
+           </property>
+           <property name="rowCount">
+            <number>0</number>
+           </property>
+           <attribute name="horizontalHeaderVisible">
+            <bool>true</bool>
+           </attribute>
+           <attribute name="horizontalHeaderCascadingSectionResizes">
+            <bool>false</bool>
+           </attribute>
+           <attribute name="horizontalHeaderMinimumSectionSize">
+            <number>40</number>
+           </attribute>
+           <attribute name="horizontalHeaderDefaultSectionSize">
+            <number>40</number>
+           </attribute>
+           <attribute name="horizontalHeaderHighlightSections">
+            <bool>false</bool>
+           </attribute>
+           <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+            <bool>false</bool>
+           </attribute>
+           <attribute name="horizontalHeaderStretchLastSection">
+            <bool>true</bool>
+           </attribute>
+           <attribute name="verticalHeaderVisible">
+            <bool>false</bool>
+           </attribute>
+           <attribute name="verticalHeaderCascadingSectionResizes">
+            <bool>false</bool>
+           </attribute>
+           <attribute name="verticalHeaderMinimumSectionSize">
+            <number>25</number>
+           </attribute>
+           <attribute name="verticalHeaderDefaultSectionSize">
+            <number>25</number>
+           </attribute>
+           <attribute name="verticalHeaderShowSortIndicator" stdset="0">
+            <bool>false</bool>
+           </attribute>
+           <attribute name="verticalHeaderStretchLastSection">
+            <bool>false</bool>
+           </attribute>
+           <column>
+            <property name="text">
+             <string>Files to be bundled</string>
+            </property>
+            <property name="textAlignment">
+             <set>AlignLeading|AlignVCenter</set>
+            </property>
+           </column>
+          </widget>
+          <widget class="QLineEdit" name="hook_path_edit">
+           <property name="geometry">
+            <rect>
+             <x>140</x>
+             <y>110</y>
+             <width>250</width>
+             <height>30</height>
+            </rect>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="focusPolicy">
+            <enum>Qt::ClickFocus</enum>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="readOnly">
+            <bool>false</bool>
+           </property>
+           <property name="clearButtonEnabled">
+            <bool>true</bool>
+           </property>
+          </widget>
+          <widget class="QTableWidget" name="dir_table">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>220</y>
+             <width>460</width>
+             <height>140</height>
+            </rect>
+           </property>
+           <property name="focusPolicy">
+            <enum>Qt::NoFocus</enum>
+           </property>
+           <property name="autoFillBackground">
+            <bool>false</bool>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">/*** 테이블 위젯 ***/
+
+
+/*상부 헤더*/
+QHeaderView::section {
+	background-color: rgb(240, 240, 240);
+	border-style: solid;
+	border-color: rgb(220, 220, 220);
+	border-right-width: 1px;
+	border-bottom: 1px solid rgb(220, 220, 220);
+}
+
+/*테이블 바디 외곽*/
+QTableWidget{
+	background-color:white;
+	border-style: solid;
+	border-width: 1px;
+	border-color: rgb(220, 220, 220);
+	padding-right: -1px /*QT 테이블의 우측 비대칭 보정*/
+}
+
+/*테이블 내 가이드라인 컬러*/
+QTableWidget {
+	gridline-color: rgb(220, 220, 220);
+}
+
+/*선택항목 컬러*/
+QTableWidget::item:selected{
+	background-color:rgb(205, 228, 247);
+}</string>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Sunken</enum>
+           </property>
+           <property name="horizontalScrollBarPolicy">
+            <enum>Qt::ScrollBarAsNeeded</enum>
+           </property>
+           <property name="sizeAdjustPolicy">
+            <enum>QAbstractScrollArea::AdjustToContents</enum>
+           </property>
+           <property name="autoScroll">
+            <bool>false</bool>
+           </property>
+           <property name="editTriggers">
+            <set>QAbstractItemView::NoEditTriggers</set>
+           </property>
+           <property name="alternatingRowColors">
+            <bool>false</bool>
+           </property>
+           <property name="selectionMode">
+            <enum>QAbstractItemView::ExtendedSelection</enum>
+           </property>
+           <property name="selectionBehavior">
+            <enum>QAbstractItemView::SelectRows</enum>
+           </property>
+           <property name="horizontalScrollMode">
+            <enum>QAbstractItemView::ScrollPerPixel</enum>
+           </property>
+           <property name="showGrid">
+            <bool>true</bool>
+           </property>
+           <property name="gridStyle">
+            <enum>Qt::SolidLine</enum>
+           </property>
+           <property name="sortingEnabled">
+            <bool>false</bool>
+           </property>
+           <property name="cornerButtonEnabled">
+            <bool>true</bool>
+           </property>
+           <property name="rowCount">
+            <number>0</number>
+           </property>
+           <attribute name="horizontalHeaderVisible">
+            <bool>true</bool>
+           </attribute>
+           <attribute name="horizontalHeaderCascadingSectionResizes">
+            <bool>false</bool>
+           </attribute>
+           <attribute name="horizontalHeaderMinimumSectionSize">
+            <number>40</number>
+           </attribute>
+           <attribute name="horizontalHeaderDefaultSectionSize">
+            <number>40</number>
+           </attribute>
+           <attribute name="horizontalHeaderHighlightSections">
+            <bool>false</bool>
+           </attribute>
+           <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+            <bool>false</bool>
+           </attribute>
+           <attribute name="horizontalHeaderStretchLastSection">
+            <bool>true</bool>
+           </attribute>
+           <attribute name="verticalHeaderVisible">
+            <bool>false</bool>
+           </attribute>
+           <attribute name="verticalHeaderCascadingSectionResizes">
+            <bool>false</bool>
+           </attribute>
+           <attribute name="verticalHeaderMinimumSectionSize">
+            <number>25</number>
+           </attribute>
+           <attribute name="verticalHeaderDefaultSectionSize">
+            <number>25</number>
+           </attribute>
+           <attribute name="verticalHeaderShowSortIndicator" stdset="0">
+            <bool>false</bool>
+           </attribute>
+           <attribute name="verticalHeaderStretchLastSection">
+            <bool>false</bool>
+           </attribute>
+           <column>
+            <property name="text">
+             <string>Directorys to be bundled</string>
+            </property>
+            <property name="textAlignment">
+             <set>AlignLeading|AlignVCenter</set>
+            </property>
+           </column>
+          </widget>
+          <widget class="QTextEdit" name="output">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>740</y>
+             <width>460</width>
+             <height>130</height>
+            </rect>
+           </property>
+           <property name="focusPolicy">
+            <enum>Qt::ClickFocus</enum>
+           </property>
+           <property name="acceptDrops">
+            <bool>false</bool>
+           </property>
+           <property name="textInteractionFlags">
+            <set>Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+           </property>
+          </widget>
+          <widget class="QLineEdit" name="icon_path_edit">
+           <property name="geometry">
+            <rect>
+             <x>140</x>
+             <y>60</y>
+             <width>250</width>
+             <height>30</height>
+            </rect>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="focusPolicy">
+            <enum>Qt::ClickFocus</enum>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="readOnly">
+            <bool>false</bool>
+           </property>
+           <property name="clearButtonEnabled">
+            <bool>true</bool>
+           </property>
+          </widget>
+          <widget class="QLabel" name="dmy_14">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>60</y>
+             <width>100</width>
+             <height>30</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Icon</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+          <widget class="QLineEdit" name="app_name_edit">
+           <property name="geometry">
+            <rect>
+             <x>140</x>
+             <y>10</y>
+             <width>100</width>
+             <height>30</height>
+            </rect>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="focusPolicy">
+            <enum>Qt::ClickFocus</enum>
+           </property>
+           <property name="inputMethodHints">
+            <set>Qt::ImhNone</set>
+           </property>
+           <property name="text">
+            <string>Run</string>
+           </property>
+           <property name="frame">
+            <bool>true</bool>
+           </property>
+           <property name="echoMode">
+            <enum>QLineEdit::Normal</enum>
+           </property>
+           <property name="cursorMoveStyle">
+            <enum>Qt::LogicalMoveStyle</enum>
+           </property>
+           <property name="clearButtonEnabled">
+            <bool>false</bool>
+           </property>
+          </widget>
+          <widget class="QLabel" name="dmy_16">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>610</y>
+             <width>100</width>
+             <height>30</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>More options</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+          <widget class="QLabel" name="dmy_19">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>10</y>
+             <width>100</width>
+             <height>30</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Name</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+          <widget class="QRadioButton" name="win_radio">
+           <property name="geometry">
+            <rect>
+             <x>260</x>
+             <y>10</y>
+             <width>100</width>
+             <height>30</height>
+            </rect>
+           </property>
+           <property name="focusPolicy">
+            <enum>Qt::NoFocus</enum>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>Windowed</string>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+          <widget class="QRadioButton" name="cmd_radio">
+           <property name="geometry">
+            <rect>
+             <x>380</x>
+             <y>10</y>
+             <width>100</width>
+             <height>30</height>
+            </rect>
+           </property>
+           <property name="focusPolicy">
+            <enum>Qt::NoFocus</enum>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>Console</string>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="checked">
+            <bool>false</bool>
+           </property>
+          </widget>
+          <widget class="QLabel" name="dmy_17">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>710</y>
+             <width>100</width>
+             <height>30</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Status</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="icon_path_btn">
+           <property name="geometry">
+            <rect>
+             <x>400</x>
+             <y>60</y>
+             <width>80</width>
+             <height>30</height>
+            </rect>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="focusPolicy">
+            <enum>Qt::NoFocus</enum>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="../QRC/img.qrc">
+             <normaloff>:/img/Icon/unit_selection_stack.png</normaloff>:/img/Icon/unit_selection_stack.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>25</width>
+             <height>25</height>
+            </size>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="hook_path_btn">
+           <property name="geometry">
+            <rect>
+             <x>400</x>
+             <y>110</y>
+             <width>80</width>
+             <height>30</height>
+            </rect>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="focusPolicy">
+            <enum>Qt::NoFocus</enum>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="../QRC/img.qrc">
+             <normaloff>:/img/Icon/unit_selection_stack.png</normaloff>:/img/Icon/unit_selection_stack.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>25</width>
+             <height>25</height>
+            </size>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="save_btn">
+           <property name="geometry">
+            <rect>
+             <x>190</x>
+             <y>930</y>
+             <width>140</width>
+             <height>50</height>
+            </rect>
+           </property>
+           <property name="focusPolicy">
+            <enum>Qt::NoFocus</enum>
+           </property>
+           <property name="text">
+            <string>Save Settings</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../QRC/img.qrc">
+             <normaloff>:/img/Icon/sc_save.png</normaloff>:/img/Icon/sc_save.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="start_btn">
+           <property name="geometry">
+            <rect>
+             <x>340</x>
+             <y>930</y>
+             <width>140</width>
+             <height>50</height>
+            </rect>
+           </property>
+           <property name="focusPolicy">
+            <enum>Qt::NoFocus</enum>
+           </property>
+           <property name="text">
+            <string>Start</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../QRC/img.qrc">
+             <normaloff>:/img/Icon/unit_run.png</normaloff>:/img/Icon/unit_run.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>30</width>
+             <height>30</height>
+            </size>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="save_path_btn">
+           <property name="geometry">
+            <rect>
+             <x>400</x>
+             <y>160</y>
+             <width>80</width>
+             <height>30</height>
+            </rect>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="focusPolicy">
+            <enum>Qt::NoFocus</enum>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="../QRC/img.qrc">
+             <normaloff>:/img/Icon/unit_open_folder.png</normaloff>:/img/Icon/unit_open_folder.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>25</width>
+             <height>25</height>
+            </size>
+           </property>
+          </widget>
+          <widget class="QLabel" name="dmy_13">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>160</y>
+             <width>100</width>
+             <height>30</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Output Directory </string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+          <widget class="QLineEdit" name="save_path_edit">
+           <property name="geometry">
+            <rect>
+             <x>140</x>
+             <y>160</y>
+             <width>250</width>
+             <height>30</height>
+            </rect>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="focusPolicy">
+            <enum>Qt::ClickFocus</enum>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="readOnly">
+            <bool>false</bool>
+           </property>
+           <property name="clearButtonEnabled">
+            <bool>true</bool>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="dir_path_btn">
+           <property name="geometry">
+            <rect>
+             <x>310</x>
+             <y>370</y>
+             <width>80</width>
+             <height>30</height>
+            </rect>
+           </property>
+           <property name="focusPolicy">
+            <enum>Qt::NoFocus</enum>
+           </property>
+           <property name="text">
+            <string>Add</string>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="dir_remove_btn">
+           <property name="geometry">
+            <rect>
+             <x>400</x>
+             <y>370</y>
+             <width>80</width>
+             <height>30</height>
+            </rect>
+           </property>
+           <property name="focusPolicy">
+            <enum>Qt::NoFocus</enum>
+           </property>
+           <property name="text">
+            <string>Remove</string>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="file_remove_btn">
+           <property name="geometry">
+            <rect>
+             <x>400</x>
+             <y>570</y>
+             <width>80</width>
+             <height>30</height>
+            </rect>
+           </property>
+           <property name="focusPolicy">
+            <enum>Qt::NoFocus</enum>
+           </property>
+           <property name="text">
+            <string>Remove</string>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="file_path_btn">
+           <property name="geometry">
+            <rect>
+             <x>310</x>
+             <y>570</y>
+             <width>80</width>
+             <height>30</height>
+            </rect>
+           </property>
+           <property name="focusPolicy">
+            <enum>Qt::NoFocus</enum>
+           </property>
+           <property name="text">
+            <string>Add</string>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+          </widget>
+          <widget class="QCheckBox" name="remove_cbox">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>880</y>
+             <width>40</width>
+             <height>30</height>
+            </rect>
+           </property>
+           <property name="focusPolicy">
+            <enum>Qt::NoFocus</enum>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">/*** 토글버튼 ***/
+QCheckBox{
+margin-left: 1px;
+margin-right: 1px;
+margin-top: 1px;
+}
+
+QCheckBox::indicator:checked{image: url(:/img/Icon/unit_toggle_on.png);margin-left:6px}
+QCheckBox::indicator:unchecked{image: url(:/img/Icon/unit_toggle_off.png);margin-left:6px}
+QCheckBox:hover {background-color: rgb(230, 230, 230);}
+</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+           <property name="autoRepeat">
+            <bool>false</bool>
+           </property>
+           <property name="autoExclusive">
+            <bool>false</bool>
+           </property>
+           <property name="tristate">
+            <bool>false</bool>
+           </property>
+          </widget>
+          <widget class="QLabel" name="dmy_18">
+           <property name="geometry">
+            <rect>
+             <x>60</x>
+             <y>880</y>
+             <width>240</width>
+             <height>30</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Remove [ *.spec, __pycache__, build ]</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+          <zorder>option_edit</zorder>
+          <zorder>dmy_15</zorder>
+          <zorder>file_table</zorder>
+          <zorder>hook_path_edit</zorder>
+          <zorder>dir_table</zorder>
+          <zorder>output</zorder>
+          <zorder>icon_path_edit</zorder>
+          <zorder>dmy_14</zorder>
+          <zorder>app_name_edit</zorder>
+          <zorder>dmy_16</zorder>
+          <zorder>dmy_19</zorder>
+          <zorder>win_radio</zorder>
+          <zorder>cmd_radio</zorder>
+          <zorder>dmy_17</zorder>
+          <zorder>save_btn</zorder>
+          <zorder>start_btn</zorder>
+          <zorder>dmy_13</zorder>
+          <zorder>save_path_edit</zorder>
+          <zorder>icon_path_btn</zorder>
+          <zorder>save_path_btn</zorder>
+          <zorder>hook_path_btn</zorder>
+          <zorder>dir_path_btn</zorder>
+          <zorder>dir_remove_btn</zorder>
+          <zorder>file_remove_btn</zorder>
+          <zorder>file_path_btn</zorder>
+          <zorder>remove_cbox</zorder>
+          <zorder>dmy_18</zorder>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_4">
+     <attribute name="title">
+      <string>1</string>
+     </attribute>
+     <widget class="QGroupBox" name="groupBox_24">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>10</y>
+        <width>470</width>
+        <height>300</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>GNU General Public License v3.0</string>
+      </property>
+      <property name="flat">
+       <bool>true</bool>
+      </property>
+      <widget class="QPlainTextEdit" name="plainTextEdit">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>460</width>
+         <height>220</height>
+        </rect>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+       <property name="plainText">
+        <string>Copyright (C) 2021 MKdays
+https://github.com/MKdays/PyCooler
+
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with this program.  If not, see &lt;https://www.gnu.org/licenses/&gt;.</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="blog_btn">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>260</y>
+         <width>170</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="text">
+        <string>Blog</string>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>30</width>
+         <height>30</height>
+        </size>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="src_btn">
+       <property name="geometry">
+        <rect>
+         <x>190</x>
+         <y>260</y>
+         <width>170</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="text">
+        <string>Source Code</string>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>30</width>
+         <height>30</height>
+        </size>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_20">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>320</y>
+        <width>470</width>
+        <height>300</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Open Source Software Notice</string>
+      </property>
+      <property name="flat">
+       <bool>true</bool>
+      </property>
+      <widget class="QPlainTextEdit" name="plainTextEdit_2">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>460</width>
+         <height>220</height>
+        </rect>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+       <property name="plainText">
+        <string>The following sets forth attribution notices for third party software that may be contained in this program.
+Please refer to the LICENSE.txt file in this program folder for each license copy.
+
+| Python : https://www.python.org/
+Copyright (c) 2001, 2002, 2003, 2004, 2005, 2006 Python Software Foundation; All Rights Reserved
+PSF-2.0 License
+
+| PySide2 : http://www.qt.io/licensing/
+The Qt Toolkit is Copyright (C) 2015 The Qt Company Ltd.
+GPLv3 License
+
+| shiboken2 : http://www.qt.io/licensing/
+The Qt Toolkit is Copyright (C) 2015 The Qt Company Ltd.
+GPLv3 License</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="icons8_btn">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>260</y>
+         <width>170</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="text">
+        <string>icons8.com</string>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>30</width>
+         <height>30</height>
+        </size>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="py_btn">
+       <property name="geometry">
+        <rect>
+         <x>190</x>
+         <y>260</y>
+         <width>170</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="text">
+        <string>pyinstaller.org</string>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>30</width>
+         <height>30</height>
+        </size>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>620</width>
+      <height>700</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/**프레임**/
+QFrame{
+background-color: rgb(0, 102, 180);
+border-style:solid;
+border-width:0px ;
+/*border-color: rgb(0, 102, 180);*/
+}</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>110</width>
+      <height>331</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QRadioButton{}
+
+/*라디오버튼 아이콘*/
+QRadioButton::indicator:checked{image: url(None);}
+QRadioButton::indicator:unchecked{image: url(None);}
+
+QRadioButton:unchecked{color: white;} /*라디오버튼 텍스트 컬러*/
+QRadioButton:hover{background-color: rgb(0, 88, 155);}
+QRadioButton:checked{background-color: rgb(0, 73, 130);color: white;}
+</string>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+    <widget class="QRadioButton" name="radio_0">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>40</y>
+       <width>110</width>
+       <height>50</height>
+      </rect>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::NoFocus</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string>Main</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="radio_1">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>90</y>
+       <width>110</width>
+       <height>50</height>
+      </rect>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::NoFocus</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string>About</string>
+     </property>
+     <property name="checked">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="app_close_btn">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>10</y>
+      <width>40</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {background-color: transparent;border-radius: 0px;border-style: solid;border-width: 3px;border-color: transparent;height: 24px;width: 80px;
+margin-left: 1px;
+margin-right: 1px;
+margin-top: 1px;
+image: url(:/img/Icon/unit_close.png);}
+
+QPushButton:hover {background-color: rgb(232, 17, 35);
+image: url(:/img/Icon/unit_close_pressed.png);}
+QPushButton:pressed {background-color: rgb(241, 112, 122);}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>15</width>
+      <height>15</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="qtitle">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>119</x>
+      <y>10</y>
+      <width>511</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit{
+background-color: white;
+border-style:solid;
+border-width:0px;
+border-color: transparent;
+border-bottom-color: rgb(217, 217, 217);
+margin-top: 1px;
+margin-left: 1px;
+margin-right: 1px;
+}
+</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="min_btn">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>10</y>
+      <width>40</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {background-color: transparent;border-radius: 0px;border-style: solid;border-width: 3px;border-color: transparent;height: 24px;width: 80px;
+margin-left: 1px;
+margin-right: 1px;
+margin-top: 1px;
+image: url(:/img/Icon/unit_min.png);
+}
+QPushButton:hover {background-color: rgb(230, 230, 230);}
+QPushButton:pressed {background-color: rgb(205, 205, 205);}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>15</width>
+      <height>15</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QLabel" name="title">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>10</y>
+      <width>100</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{
+font: 18px; color: rgb(0, 102, 180);
+}</string>
+    </property>
+    <property name="text">
+     <string>PyCooler</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <zorder>frame</zorder>
+   <zorder>groupBox</zorder>
+   <zorder>tab_main</zorder>
+   <zorder>qtitle</zorder>
+   <zorder>min_btn</zorder>
+   <zorder>app_close_btn</zorder>
+   <zorder>title</zorder>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>tab_main</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../QRC/img.qrc"/>
+ </resources>
+ <connections/>
+</ui>
