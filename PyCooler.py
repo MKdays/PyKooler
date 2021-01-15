@@ -30,7 +30,7 @@ from PySide2.QtGui import *
 from PySide2 import QtCore, QtWidgets, QtGui, QtXml, QtUiTools
 
 #QT리소스
-from QRC.img import qt_resource_data
+import resource
 
 class CLASS_UI_LOADER(QtUiTools.QUiLoader):
     def __init__(self, base_instance):
@@ -63,7 +63,7 @@ class CLASS_MAINWINDOW(QMainWindow):
 
     def ui_basic(self):
         self.setWindowTitle(app_ver) #윈도우 제목표시줄
-        self.setWindowIcon(QIcon(":/img/Icon/icecube.png")) #아이콘 경로
+        self.setWindowIcon(QIcon(":/__resource__/image/icecube.png")) #아이콘 경로
         self.tab_main.setStyleSheet("QTabWidget::pane {background: white;border: 0px solid;margin-right: 1px;margin-bottom: 1px;}QTabBar::tab{color: blue;font: 30px; height: 30px;background: transparent;border: 0px solid;width: 0;}") #ui파일에서 tab 위젯을 숨김
         self.setFixedSize(self.frame.width(),self.frame.height()) #윈도우 사이즈 : Qframe한변 +10px
 

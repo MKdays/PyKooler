@@ -40,27 +40,27 @@ QPushButton:pressed {background-color: rgb(205, 228, 247);border-color: rgb(0, 8
 /*** 스핀박스 ***/
 QSpinBox{border-style: solid;border-width: 1px;border-color: rgb(200, 200, 200);}
 QSpinBox:hover {border-color: rgb(0, 120, 215);}
-QSpinBox::up-button {image: url(:/img/Icon/unit_up.png);width: 20;background-color: rgb(240, 240, 240);}
+QSpinBox::up-button {image: url(:/__resource__/image/unit_up.png);width: 20;background-color: rgb(240, 240, 240);}
 QSpinBox::up-button:hover {background-color: rgb(229, 241, 251);}
 QSpinBox::up-button:pressed {background-color: rgb(205, 228, 247);}
-QSpinBox::down-button {image: url(:/img/Icon/unit_down.png);width: 20;background-color: rgb(240, 240, 240);}
+QSpinBox::down-button {image: url(:/__resource__/image/unit_down.png);width: 20;background-color: rgb(240, 240, 240);}
 QSpinBox::down-button:hover {background-color: rgb(229, 241, 251);}
 QSpinBox::down-button:pressed {background-color: rgb(205, 228, 247);}
 
 /*** 스핀박스 ***/
 QDoubleSpinBox{border-style: solid;border-width: 1px;border-color: rgb(200, 200, 200);}
 QDoubleSpinBox:hover {border-color: rgb(0, 120, 215);}
-QDoubleSpinBox::up-button {image: url(:/img/Icon/unit_up.png);width: 20;background-color: rgb(240, 240, 240);}
+QDoubleSpinBox::up-button {image: url(:/__resource__/image/unit_up.png);width: 20;background-color: rgb(240, 240, 240);}
 QDoubleSpinBox::up-button:hover {background-color: rgb(229, 241, 251);}
 QDoubleSpinBox::up-button:pressed {background-color: rgb(205, 228, 247);}
-QDoubleSpinBox::down-button {image: url(:/img/Icon/unit_down.png);width: 20;background-color: rgb(240, 240, 240);}
+QDoubleSpinBox::down-button {image: url(:/__resource__/image/unit_down.png);width: 20;background-color: rgb(240, 240, 240);}
 QDoubleSpinBox::down-button:hover {background-color: rgb(229, 241, 251);}
 QDoubleSpinBox::down-button:pressed {background-color: rgb(205, 228, 247);}
 
 /*** 콤보박스 ***/
 QComboBox {background-color: transparent;border-radius: 0px;border-style: solid;border-width: 1px;border-color: rgb(200, 200, 200);}
 QComboBox:hover {background-color: rgb(229, 241, 251);border-color: rgb(0, 120, 215);}
-QComboBox:drop-down {image: url(:/img/Icon/unit_dbox.png);width: 20px;}
+QComboBox:drop-down {image: url(:/__resource__/image/unit_dbox.png);width: 20px;}
 
 /*** 프로그레스바 ***/
 QProgressBar{background-color: white; border-radius: 0px;border-style: solid;border-width: 1px;border-color: rgb(200, 200, 200);text-align: center;}
@@ -202,8 +202,8 @@ border: 0px solid;
           <property name="styleSheet">
            <string notr="true">QGroupBox{background-color: white; font: 14px;color: rgb(63, 63, 63);border: 0px solid; border-color: rgb(200, 200, 200);}
 
-QRadioButton::indicator:checked{image: url(:/img/Icon/unit_radio_checked.png);}
-QRadioButton::indicator:unchecked{image: url(:/img/Icon/unit_radio_unchecked.png);}
+QRadioButton::indicator:checked{image: url(:/__resource__/image/unit_radio_checked.png);}
+QRadioButton::indicator:unchecked{image: url(:/__resource__/image/unit_radio_unchecked.png);}
 QRadioButton:checked{background-color: transparent}
 QRadioButton:unchecked{color: rgb(127, 127, 127);}
 QRadioButton:hover {background-color: rgb(230, 230, 230);}</string>
@@ -781,7 +781,7 @@ QTableWidget::item:selected{
            </property>
            <property name="icon">
             <iconset resource="../QRC/img.qrc">
-             <normaloff>:/img/Icon/unit_selection_stack.png</normaloff>:/img/Icon/unit_selection_stack.png</iconset>
+             <normaloff>:/__resource__/image/unit_selection_stack.png</normaloff>:/__resource__/image/unit_selection_stack.png</iconset>
            </property>
            <property name="iconSize">
             <size>
@@ -813,7 +813,7 @@ QTableWidget::item:selected{
            </property>
            <property name="icon">
             <iconset resource="../QRC/img.qrc">
-             <normaloff>:/img/Icon/unit_selection_stack.png</normaloff>:/img/Icon/unit_selection_stack.png</iconset>
+             <normaloff>:/__resource__/image/unit_selection_stack.png</normaloff>:/__resource__/image/unit_selection_stack.png</iconset>
            </property>
            <property name="iconSize">
             <size>
@@ -839,7 +839,7 @@ QTableWidget::item:selected{
            </property>
            <property name="icon">
             <iconset resource="../QRC/img.qrc">
-             <normaloff>:/img/Icon/sc_save.png</normaloff>:/img/Icon/sc_save.png</iconset>
+             <normaloff>:/__resource__/image/sc_save.png</normaloff>:/__resource__/image/sc_save.png</iconset>
            </property>
            <property name="iconSize">
             <size>
@@ -865,7 +865,7 @@ QTableWidget::item:selected{
            </property>
            <property name="icon">
             <iconset resource="../QRC/img.qrc">
-             <normaloff>:/img/Icon/unit_run.png</normaloff>:/img/Icon/unit_run.png</iconset>
+             <normaloff>:/__resource__/image/unit_run.png</normaloff>:/__resource__/image/unit_run.png</iconset>
            </property>
            <property name="iconSize">
             <size>
@@ -897,7 +897,7 @@ QTableWidget::item:selected{
            </property>
            <property name="icon">
             <iconset resource="../QRC/img.qrc">
-             <normaloff>:/img/Icon/unit_open_folder.png</normaloff>:/img/Icon/unit_open_folder.png</iconset>
+             <normaloff>:/__resource__/image/unit_open_folder.png</normaloff>:/__resource__/image/unit_open_folder.png</iconset>
            </property>
            <property name="iconSize">
             <size>
@@ -1058,8 +1058,8 @@ margin-right: 1px;
 margin-top: 1px;
 }
 
-QCheckBox::indicator:checked{image: url(:/img/Icon/unit_toggle_on.png);margin-left:6px}
-QCheckBox::indicator:unchecked{image: url(:/img/Icon/unit_toggle_off.png);margin-left:6px}
+QCheckBox::indicator:checked{image: url(:/__resource__/image/unit_toggle_on.png);margin-left:6px}
+QCheckBox::indicator:unchecked{image: url(:/__resource__/image/unit_toggle_off.png);margin-left:6px}
 QCheckBox:hover {background-color: rgb(230, 230, 230);}
 </string>
            </property>
@@ -1420,10 +1420,10 @@ QRadioButton:checked{background-color: rgb(0, 73, 130);color: white;}
 margin-left: 1px;
 margin-right: 1px;
 margin-top: 1px;
-image: url(:/img/Icon/unit_close.png);}
+image: url(:/__resource__/image/unit_close.png);}
 
 QPushButton:hover {background-color: rgb(232, 17, 35);
-image: url(:/img/Icon/unit_close_pressed.png);}
+image: url(:/__resource__/image/unit_close_pressed.png);}
 QPushButton:pressed {background-color: rgb(241, 112, 122);}</string>
     </property>
     <property name="text">
@@ -1482,7 +1482,7 @@ margin-right: 1px;
 margin-left: 1px;
 margin-right: 1px;
 margin-top: 1px;
-image: url(:/img/Icon/unit_min.png);
+image: url(:/__resource__/image/unit_min.png);
 }
 QPushButton:hover {background-color: rgb(230, 230, 230);}
 QPushButton:pressed {background-color: rgb(205, 205, 205);}</string>
@@ -1537,7 +1537,7 @@ font: 18px; color: rgb(0, 102, 180);
   <tabstop>tab_main</tabstop>
  </tabstops>
  <resources>
-  <include location="../QRC/img.qrc"/>
+  <include location="../../__resource__/resource.qrc"/>
  </resources>
  <connections/>
 </ui>
