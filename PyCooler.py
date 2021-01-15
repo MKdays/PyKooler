@@ -30,7 +30,7 @@ from PySide2.QtGui import *
 from PySide2 import QtCore, QtWidgets, QtGui, QtXml, QtUiTools
 
 #QT리소스
-import resource
+from qt_resource import resource
 
 class CLASS_UI_LOADER(QtUiTools.QUiLoader):
     def __init__(self, base_instance):
