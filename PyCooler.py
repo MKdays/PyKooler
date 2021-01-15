@@ -1,6 +1,6 @@
 #-*- coding: utf-8 -*-
  
-app_ver = "PyCooler 0.0.3"
+app_ver = "PyCooler 0.0.4"
 
 #경로 설정 : 순서 변경 금지
 import sys, os
