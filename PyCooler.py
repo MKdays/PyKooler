@@ -93,7 +93,7 @@ class CLASS_MAINWINDOW(QMainWindow):
     def auto_load_run(self):
         # init
         config = configparser.ConfigParser()
-        config.read(app_path + "/Lib/PyCoolerConfig/config.ini", encoding="utf-8")
+        config.read(app_path + "/Lib/pycooler_settings/config.ini", encoding="utf-8")
         
         with suppress(Exception): self.app_name_edit.setText(config["PyCooler"]["app_name"])
         with suppress(Exception): self.icon_path_edit.setText(config["PyCooler"]["icon_path"])
@@ -169,7 +169,7 @@ class CLASS_MAINWINDOW(QMainWindow):
         self.save_btn.show() #완료 후 복구
         
     def save_run(self):
-        path = app_path + "/Lib/PyCoolerConfig/config.ini"
+        path = app_path + "/Lib/pycooler_settings/config.ini"
         config = configparser.ConfigParser()
         config.read(path, encoding="utf-8")
 
