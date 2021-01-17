@@ -215,7 +215,7 @@ class CLASS_MAINWINDOW(QMainWindow):
         if len(path) < 1 : return
         self.icon_path_edit.setText(path)
         pixmap = QPixmap(self.icon_path_edit.text()) #아이콘 적용
-        self.icon_path_btn.setIcon(pixmap)
+        self.label.setPixmap(pixmap) #아이콘 적용
 
     #함수 : 윈도우 최소화/닫기
     def min_run(self): #윈도우 최소화
