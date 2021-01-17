@@ -1,6 +1,6 @@
 #-*- coding: utf-8 -*-
  
-app_ver = "PyCooler 0.0.4"
+app_ver = "PyCooler 0.0.5"
 
 #경로 설정 : 순서 변경 금지
 import sys, os
@@ -103,8 +103,8 @@ class CLASS_MAINWINDOW(QMainWindow):
         with suppress(Exception): self.py_import_path = config["PyCooler"]["py_import_path"]
 
         if Path(self.icon_path_edit.text()).is_file():
-            pixmap = QPixmap(self.icon_path_edit.text()) #아이콘 적용
-            self.icon_path_btn.setIcon(pixmap)
+            pixmap = QPixmap(self.icon_path_edit.text())
+            self.label.setPixmap(pixmap) #아이콘 적용
 
         with suppress(Exception):
             # 파일 불러옴
@@ -117,6 +117,7 @@ class CLASS_MAINWINDOW(QMainWindow):
             # DIR 불러옴
             dir_cnt = len(config.items("dir")) #파일섹션의 아이템 갯수 확인
             self.dir_table.setRowCount(dir_cnt) #아이템 갯수만큼 테이블 생성
+            print(dir_cnt)
             for i in config.items("dir"):
                 self.dir_table.setItem(int(i[0]), 0, QTableWidgetItem(i[1])) #불러옴            
 
