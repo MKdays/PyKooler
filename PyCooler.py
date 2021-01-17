@@ -85,7 +85,7 @@ class CLASS_MAINWINDOW(QMainWindow):
 
     def definitions(self): #인스턴스/변수 정의
         self.instance_title = CLASS_TITLE(self) #제목표시줄 인스턴스, 드래그 기능 구현
-        self.instance_title.setFixedSize(510,50) #제목표시줄 사이즈 : 디자인 맞게 조정필요
+        self.instance_title.setFixedSize(550,50) #제목표시줄 사이즈 : 디자인 맞게 조정필요
         self.instance_message = CLASS_MESSAGE()
         self.instance_message.setParent(self)
         self.instance_message.setWindowFlags(QtCore.Qt.FramelessWindowHint | QtCore.Qt.Dialog)
