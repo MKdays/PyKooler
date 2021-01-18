@@ -1350,7 +1350,7 @@ QCheckBox:hover {background-color: rgb(230, 230, 230);}
        </property>
        <property name="plainText">
         <string>Copyright (C) 2021 MKdays
-https://github.com/MKdays/PyCooler
+https://github.com/MKdays/PyKooler
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or any later version.
 
@@ -1705,7 +1705,7 @@ font: 18px; color: rgb(0, 102, 180);
 }</string>
     </property>
     <property name="text">
-     <string>PyCooler</string>
+     <string>PyKooler</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>

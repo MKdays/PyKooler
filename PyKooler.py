@@ -1,6 +1,6 @@
 #-*- coding: utf-8 -*-
  
-app_ver = "PyCooler 0.0.5"
+app_ver = "PyKooler 0.0.6"
 
 #경로 설정 : 순서 변경 금지
 import sys, os
@@ -93,14 +93,14 @@ class CLASS_MAINWINDOW(QMainWindow):
     def auto_load_run(self):
         # init
         config = configparser.ConfigParser()
-        config.read(app_path + "/Lib/pycooler_settings/config.ini", encoding="utf-8")
+        config.read(app_path + "/Lib/PyKooler_settings/config.ini", encoding="utf-8")
         
-        with suppress(Exception): self.app_name_edit.setText(config["PyCooler"]["app_name"])
-        with suppress(Exception): self.icon_path_edit.setText(config["PyCooler"]["icon_path"])
-        with suppress(Exception): self.save_path_edit.setText(config["PyCooler"]["save_path"])
-        with suppress(Exception): self.hook_path_edit.setText(config["PyCooler"]["hook_path"])
-        with suppress(Exception): self.option_edit.setPlainText(config["PyCooler"]["more_option"])
-        with suppress(Exception): self.py_import_path = config["PyCooler"]["py_import_path"]
+        with suppress(Exception): self.app_name_edit.setText(config["PyKooler"]["app_name"])
+        with suppress(Exception): self.icon_path_edit.setText(config["PyKooler"]["icon_path"])
+        with suppress(Exception): self.save_path_edit.setText(config["PyKooler"]["save_path"])
+        with suppress(Exception): self.hook_path_edit.setText(config["PyKooler"]["hook_path"])
+        with suppress(Exception): self.option_edit.setPlainText(config["PyKooler"]["more_option"])
+        with suppress(Exception): self.py_import_path = config["PyKooler"]["py_import_path"]
 
         if Path(self.icon_path_edit.text()).is_file():
             pixmap = QPixmap(self.icon_path_edit.text())
@@ -137,7 +137,7 @@ class CLASS_MAINWINDOW(QMainWindow):
         self.file_remove_btn.clicked.connect(self.file_remove_btn_run)
         self.blog_btn.clicked.connect(lambda : self.url_run("https://blog.naver.com/eliase"))
         self.icons8_btn.clicked.connect(lambda : self.url_run("https://icons8.com"))
-        self.src_btn.clicked.connect(lambda : self.url_run("https://github.com/MKdays/PyCooler"))
+        self.src_btn.clicked.connect(lambda : self.url_run("https://github.com/MKdays/PyKooler"))
         self.py_btn.clicked.connect(lambda : self.url_run("http://www.pyinstaller.org/"))
         self.min_btn.clicked.connect(self.min_run) #윈도우 최소화
         self.app_close_btn.clicked.connect(self.app_close_run) #윈도우 닫기
@@ -170,20 +170,20 @@ class CLASS_MAINWINDOW(QMainWindow):
         self.save_btn.show() #완료 후 복구
         
     def save_run(self):
-        path = app_path + "/Lib/pycooler_settings/config.ini"
+        path = app_path + "/Lib/pykooler_settings/config.ini"
         config = configparser.ConfigParser()
         config.read(path, encoding="utf-8")
 
         #save를 위한 초기화
         config.clear()
 
-        config.add_section("PyCooler")
-        config.set("PyCooler", "app_name", self.app_name_edit.text())
-        config.set("PyCooler", "icon_path", self.icon_path_edit.text())
-        config.set("PyCooler", "save_path", self.save_path_edit.text())
-        config.set("PyCooler", "hook_path", self.hook_path_edit.text())
-        config.set("PyCooler", "more_option", self.option_edit.toPlainText())
-        config.set("PyCooler", "py_import_path", self.py_import_path)
+        config.add_section("PyKooler")
+        config.set("PyKooler", "app_name", self.app_name_edit.text())
+        config.set("PyKooler", "icon_path", self.icon_path_edit.text())
+        config.set("PyKooler", "save_path", self.save_path_edit.text())
+        config.set("PyKooler", "hook_path", self.hook_path_edit.text())
+        config.set("PyKooler", "more_option", self.option_edit.toPlainText())
+        config.set("PyKooler", "py_import_path", self.py_import_path)
 
         #dir 저장
         config.add_section("dir")
