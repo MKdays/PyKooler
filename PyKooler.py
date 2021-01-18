@@ -93,7 +93,7 @@ class CLASS_MAINWINDOW(QMainWindow):
     def auto_load_run(self):
         # init
         config = configparser.ConfigParser()
-        config.read(app_path + "/Lib/PyKooler_settings/config.ini", encoding="utf-8")
+        config.read(app_path + "/Lib/pykooler_settings/config.ini", encoding="utf-8")
         
         with suppress(Exception): self.app_name_edit.setText(config["PyKooler"]["app_name"])
         with suppress(Exception): self.icon_path_edit.setText(config["PyKooler"]["icon_path"])
